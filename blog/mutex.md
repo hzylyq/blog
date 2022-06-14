@@ -13,7 +13,10 @@ type Mutex struct {
 
 state 锁的状态
 
-    01 locked 锁定
-    10 woken 唤醒
-    11 starv	饥饿
-    00 waitershift
+             01 locked 锁定
+
+​             10 woken 唤醒     
+
+​             11 starv    饥饿
+
+​             00 waitershift

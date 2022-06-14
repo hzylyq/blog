@@ -5,3 +5,4 @@ vmhgfs-fuse .host:/ /mnt/hgfs -o subtype=vmhgfs-fuse,allow_other
 ```
 
 执行上面命令
+
