@@ -40,4 +40,18 @@ TEXT _rt0_amd64(SB),NOSPLIT,$-8
 	JMP	runtime·rt0_go(SB)
 ```
 
-接下来使用gdb的调试命令
+接下来使用gdb的调试命令n, 看下go程序初始化会调用哪些函数
+去掉一些检查函数
+
+	CALL	runtime·args(SB), 函数入参
+	CALL	runtime·osinit(SB) os初始化
+	CALL	runtime·schedinit(SB) 调度任务GMP初始化
+
+然后就是将主程序入口放入一个goroutinue运行
+	MOVQ	$runtime·mainPC(SB), AX		// entry
+	PUSHQ	AX
+	PUSHQ	$0			// arg size
+	CALL	runtime·newproc(SB)
+
+
+
