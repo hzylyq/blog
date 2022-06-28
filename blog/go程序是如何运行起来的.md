@@ -1,6 +1,6 @@
 # go程序是如何运行起来的
 
-不管是windows还是linux, go程序最终都会编译成可执行文件, 这篇文章主要探讨下go 程序的初始话, 以及启动main函数之前做的事情.
+不管是windows还是linux, go程序最终都会编译成可执行文件, 这篇文章主要探讨下go 程序的初始化, 以及启动main函数之前做的事情.
 
 先写一个简单的函数
 
@@ -65,6 +65,7 @@ CALL	runtime·mstart(SB)
 mstart0然后调用了mstart1(), mstart1()调用了schedule()函数来调度g.
 调试进入schedule(), 会调用execute(gp, inheritTime)， 然后这个函数调用了gogo(&gp.sched), 调试发现这个函数是个汇编
 
+```
 TEXT gogo<>(SB), NOSPLIT, $0
 	get_tls(CX)
 	MOVQ	DX, g(CX)
@@ -79,13 +80,14 @@ TEXT gogo<>(SB), NOSPLIT, $0
 	MOVQ	$0, gobuf_bp(BX)
 	MOVQ	gobuf_pc(BX), BX
 	JMP	BX
+```
 继续运行
 跳到 proc.go main()这个函数
 
 fn := main_main 
 fn()
 
-然后通过上面的代码跳到了main函数. 至此go的启动流程就完成了
+然后通过上面的代码跳到了main函数. 至此go的启动流程就完成了.
 
 
 
