@@ -59,7 +59,7 @@ Put it on the queue of g's waiting to run.
 The compiler turns a go statement into a call to this.
 
 
-会创建一个g, 然后g队列中等待其运行.继续运行
+会创建一个g, 然后将g放入队列中等待运行.继续运行
 CALL	runtime·mstart(SB)
 启动一个m, 追溯下这个函数, 发现这个函数会调用
 mstart0然后调用了mstart1(), mstart1()调用了schedule()函数来调度g.
@@ -88,8 +88,3 @@ fn := main_main
 fn()
 
 然后通过上面的代码跳到了main函数. 至此go的启动流程就完成了.
-
-
-
-
-
