@@ -1,0 +1,2 @@
+## slice和array
+slice和array都是golang中内置的数据类型
