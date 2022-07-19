@@ -10,3 +10,8 @@ scp ./portal.tgz  root@192.168.1.35:/home/lvchao
 后台启动进程
 nohup ./worker -env=PRESSURE &
 
+ubuntu网络图标消失
+sudo service network-manager stop
+sudo rm /var/lib/NetworkManager/NetworkManager.state
+sudo service network-manager start
+
