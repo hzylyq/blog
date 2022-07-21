@@ -27,3 +27,11 @@ growslice函数 扩容机制如下
 
 当slice cap小于1024是,翻倍增长, 大于1024时, 增长因子变为1.25
 
+关于slice的append
+
+```go
+	func append(slice []Type, elems ...Type) []Type
+```
+由于go中都是值拷贝, 所以append不会修改原有slice的值
+
+
