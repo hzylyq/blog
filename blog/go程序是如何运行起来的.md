@@ -88,3 +88,6 @@ fn := main_main
 fn()
 
 然后通过上面的代码跳到了main函数. 至此go的启动流程就完成了.
+
+## defer
+defer 栈结构, 先进后出, 在return 之后执行
