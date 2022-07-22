@@ -15,3 +15,6 @@ sudo service network-manager stop
 sudo rm /var/lib/NetworkManager/NetworkManager.state
 sudo service network-manager start
 
+解压时间不对报错解决 tar -xvzf portal.tgz -m
+
+
