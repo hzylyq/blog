@@ -17,4 +17,7 @@ sudo service network-manager start
 
 解压时间不对报错解决 tar -xvzf portal.tgz -m
 
-
+grep 匹配多个条件
+``` bash
+cat admin.log |  grep -P '^(?=.*taskRun)(?=.*cbljlo4f6iful983g1pg'
+```
