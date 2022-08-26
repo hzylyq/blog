@@ -35,3 +35,11 @@ growslice函数 扩容机制如下
 由于go中都是值拷贝, 所以append不会修改原有slice的值
 
 
+slice 定义
+```go
+type slice struct {
+	array unsafe.Pointer
+	len   int
+	cap   int
+}
+```
