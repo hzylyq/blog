@@ -27,6 +27,8 @@ growslice函数 扩容机制如下
 
 当slice cap小于1024是,翻倍增长, 大于1024时, 增长因子变为1.25
 
+go1.18这块优化了
+
 关于slice的append
 
 ```go

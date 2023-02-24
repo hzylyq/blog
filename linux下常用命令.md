@@ -11,13 +11,18 @@ scp ./portal.tgz  root@192.168.1.35:/home/lvchao
 nohup ./worker -env=PRESSURE &
 
 ubuntu网络图标消失
-sudo service network-manager stop
+sudo service NetworkManager stop
 sudo rm /var/lib/NetworkManager/NetworkManager.state
-sudo service network-manager start
+sudo service NetworkManager start
+
+dhclient ens33 网络错误
 
 解压时间不对报错解决 tar -xvzf portal.tgz -m
 
 grep 匹配多个条件
 ``` bash
-cat admin.log |  grep -P '^(?=.*taskRun)(?=.*cbljlo4f6iful983g1pg'
+cat admin.log |  grep -P '^(?=.*taskRun)(?=.*cbljlo4f6iful983g1p'
 ```
+
+k8s ---
+kubectl exec -it "podName" /bin/bash
