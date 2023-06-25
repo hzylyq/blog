@@ -21,8 +21,18 @@ dhclient ens33 网络错误
 
 grep 匹配多个条件
 ``` bash
-cat admin.log |  grep -P '^(?=.*taskRun)(?=.*cbljlo4f6iful983g1p'
+cat admin.log |  grep -P '^(?=.*taskRun)(?=.*cbljlo4f6iful983g1p)'
 ```
 
 k8s ---
 kubectl exec -it "podName" /bin/bash
+
+mysqldump -u lvchao -p -h rm-m5e8n214n083l36wjno.mysql.rds.aliyuncs.com green admin_routes > admin_routes.sql
+
+mysql 查询重复元素
+select employee_name,count(*) from employee group by employee_name having count(employee_name)>1;
+
+set global  sort_buffer_size = 2097152*4;
+
+linux查询公网ip
+curl cip.cc
