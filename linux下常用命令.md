@@ -47,3 +47,20 @@ vmhgfs-fuse .host:/ /mnt/hgfs -o subtype=vmhgfs-fuse,allow_other
 
 ssh 开启密码登陆
 PasswordAuthentication yes
+
+ls 显示颜色
+alias ls='ls --color=auto'
+
+sudo dhclient enp0s3
+
+https://www.freesion.com/article/17221376104/#3_python37dev_32
+
+snap卸载旧版本
+snap list --all
+snap remove "$snapname" --revision="$revision"
+snap remove core --revision=16574 
+
+
+ /usr/bin/env ssh -o StrictHostKeyChecking=no -p 22 root@118.190.155.180 'cd ~/.syncd; tar -zxf 10535.tgz -C /home/dev/search-engine; rm -f 10535.tgz' 
+
+
